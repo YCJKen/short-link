@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.Optional;
 
 /**
- * 全局异常处理器,拦截异常，日志留痕，并返回Results实体
+ * 全局异常处理器,拦截异常，日志留痕，并返回Results实体, AOP原理
  *
  */
 @Component

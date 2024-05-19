@@ -41,7 +41,7 @@ public class UserController {
     }
 
     /**
-     * 查询用户名是否存在
+     * 查询用户名是否存在, hasUsername方法返回值类型为boolean, 所以在results中 T data的类型也会变为boolean 返回前端
      */
     @GetMapping("/api/shortlink/v1/user/has-username")
     public Result<Boolean> hasUsername(@RequestParam("username") String username){

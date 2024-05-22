@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class RBloomFilterConfiguration {
 
     /**
-     * 防止用户注册查询数据库的布隆过滤器
+     * 防止用户注册查询数据库的布隆过滤器, 布隆过滤器是基于redis, 两个参数为，容量和错误率
      */
     @Bean
     public RBloomFilter<String> userRegisterCachePenetrationBloomFilter(RedissonClient redissonClient) {

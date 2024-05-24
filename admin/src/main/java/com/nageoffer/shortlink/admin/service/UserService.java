@@ -7,7 +7,7 @@ import com.nageoffer.shortlink.admin.dto.req.UserLoginReqDTO;
 import com.nageoffer.shortlink.admin.dto.req.UserRegisterReqDTO;
 import com.nageoffer.shortlink.admin.dto.resp.UserLoginRespDTO;
 import com.nageoffer.shortlink.admin.dto.resp.UserRespDTO;
-import com.nageoffer.shortlink.admin.dto.resp.UserUpdateReqDTO;
+import com.nageoffer.shortlink.admin.dto.req.UserUpdateReqDTO;
 
 /*
 * 用户接口层

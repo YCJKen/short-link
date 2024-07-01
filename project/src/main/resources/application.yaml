@@ -24,8 +24,18 @@ server:
 spring:
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
-    url: jdbc:shardingsphere:classpath:shardingsphere-config-dev.yaml
+    url: jdbc:shardingsphere:classpath:shardingsphere-config-${database.env:dev}.yaml
   data:
     redis:
       host: 127.0.0.1
       port: 6379
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+
+short-link:
+  stats:
+    locale:
+      amap-key: 824c511f0997586ea016f979fdb23087
+

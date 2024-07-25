@@ -21,6 +21,7 @@ import static com.nageoffer.shortlink.project.common.constant.RedisKeyConstant.D
 @RequiredArgsConstructor
 public class DelayShortLinkStatsConsumer implements InitializingBean {
 
+    // redisson客户端用于与redis进行交互
     private final RedissonClient redissonClient;
     private final ShortLinkService shortLinkService;
 
@@ -34,6 +35,7 @@ public class DelayShortLinkStatsConsumer implements InitializingBean {
                             return thread;
                         })
                 .execute(() -> {
+                    // 从redissonClient中获取队列，根据key值
                     RBlockingDeque<ShortLinkStatsRecordDTO> blockingDeque = redissonClient.getBlockingDeque(DELAY_QUEUE_STATS_KEY);
                     RDelayedQueue<ShortLinkStatsRecordDTO> delayedQueue = redissonClient.getDelayedQueue(blockingDeque);
                     // 使用for死循环轮询延迟队列，如果有访问信息，则调用service
